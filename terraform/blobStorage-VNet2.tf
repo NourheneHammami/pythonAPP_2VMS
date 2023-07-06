@@ -26,3 +26,4 @@ resource "azurerm_storage_blob" "example" {
 }
 
 #terraform import azurerm_storage_blob.blob1 https://example.blob.core.windows.net/container/blob.vhd
+# fetaure 2 tesst
