@@ -2,10 +2,10 @@
 
 #azure Virtual Machine2 #Linux #VNet1
 
-resource "azurerm_network_interface" "example" {
-  name                = "example-nic"
+resource "azurerm_network_interface" "nic_vm_app" {
+  name                = "nic_vm_app"
   location            = azurerm_resource_group.example.location
-  resource_group_name = azurerm_resource_group.example.name
+  resource_group_name = azurerm_resource_group.rg-python-app.name
 
   ip_configuration {
     name                          = "internal"
@@ -16,7 +16,7 @@ resource "azurerm_network_interface" "example" {
 
 resource "azurerm_linux_virtual_machine" "VM2" {
   name                = "VM2"
-  resource_group_name = azurerm_resource_group.example.name
+  resource_group_name = azurerm_resource_group.rg-python-app.name
   location            = azurerm_resource_group.example.location
   size                = "Standard_F2"
   admin_username      = "adminuser"
